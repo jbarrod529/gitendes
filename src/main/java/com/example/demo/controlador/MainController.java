@@ -22,12 +22,21 @@ public class MainController {
 
 	 private final int TAM_PAGINACION = 5;
 	
-
+/**
+ * 
+ * @return returns index web
+ */
     @GetMapping("/")
     public String index() {
         return "index"; // Muestra la página de inicio (index.html)
     }
 
+    /**
+     * 
+     * 
+     *  
+     * @return returns login web
+     */
     @GetMapping("/login")
     public String showLoginForm(Model model, HttpServletRequest request) {
         HttpSession session = request.getSession(false);
@@ -37,6 +46,13 @@ public class MainController {
     }
     
 
+    /**
+     * 
+     * @param model
+     * @param page
+     * @param request
+     * @return
+     */
 @GetMapping("/home")
 public String home(Model model,  @RequestParam(value = "page", defaultValue = "0") int page,
          HttpServletRequest request ) {
