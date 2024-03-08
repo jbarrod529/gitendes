@@ -14,10 +14,18 @@ import jakarta.servlet.http.HttpSession;
 
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Slice;
+
 @Controller
+
+ /**
+  * @Controller prueba
+  */
 public class MainController {
 	
-	 @Autowired
+	 @Autowired 
+	 /**
+	  * @Autowired prueba2
+	  */
 	 private ComentarioServicio comentarioServicio;
 
 	 private final int TAM_PAGINACION = 5;
@@ -26,7 +34,9 @@ public class MainController {
  * 
  * @return returns index web
  */
-    @GetMapping("/")
+    
+	 @GetMapping("/")
+    
     public String index() {
         return "index"; // Muestra la página de inicio (index.html)
     }
@@ -48,10 +58,10 @@ public class MainController {
 
     /**
      * 
-     * @param model
-     * @param page
-     * @param request
-     * @return
+     * @param model // model of web
+     * @param page /tipo de pagina
+     * @param request /tipo de request
+     * @return pagina principal
      */
 @GetMapping("/home")
 public String home(Model model,  @RequestParam(value = "page", defaultValue = "0") int page,
